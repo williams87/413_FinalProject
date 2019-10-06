@@ -1,5 +1,5 @@
 var mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost/db18", { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect("mongodb://localhost/db19", { useNewUrlParser: true, useUnifiedTopology: true });
 
 module.exports = mongoose;
