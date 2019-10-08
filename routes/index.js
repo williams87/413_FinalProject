@@ -50,4 +50,23 @@ router.get("/shipping", function(req, res, next) {
 	res.status(200).send(JSON.stringify(shippingCosts));
 });
 
+router.post("/parrot/:val", function(req, res, next) {
+
+	// Initial object for response
+	let responseObj = { };
+
+	for (let key in req.params) {
+	   responseObj["Route Parameter: " + key] = req.params[key];
+	}
+
+	for (let key in req.body) {
+	   responseObj["Body property: " + key] = req.body[key];
+	}
+
+   console.log(responseObj);
+   
+	// Send stringified object in response with response code 200
+	res.status(200).send(JSON.stringify(responseObj));
+});
+
 module.exports = router;
