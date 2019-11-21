@@ -1,0 +1,38 @@
+
+#map {
+    width: 100%;
+    height: 400px;
+    background-color: grey;
+}
+
+#logo {
+    margin: 5px;
+    width: 50px;
+}
+
+#name {
+    font-size: 32pt;
+    vertical-align: top;
+}
+
+#account {
+   padding-top: 5px;
+}
+
+#registerDeviceForm,#updateLocationForm, #main, #error, #deleteDeviceForm, #replaceDeviceForm, #updateAccountForm, #uvForm {
+   display: none;
+}
+
+.input-field input {
+   color: white;
+}
+
+
+#passwordErrors{
+  /*border:3px solid black;*/
+  text-align:left;
+  /*border-radius:10px; 
+  box-shadow: 5px 5px #888888;*/
+  width:20%;
+  
+}

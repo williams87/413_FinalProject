@@ -1,7 +1,8 @@
 function postJson() {
     let url = document.getElementById("url").value;
     let json = document.getElementById("jsonData").value;
-
+	alert(url);
+	alert(json);
     let xhr = new XMLHttpRequest();
     xhr.addEventListener("load", processResponse);
     xhr.responseType = "json";

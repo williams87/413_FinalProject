@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+	 <title>SunRnr Home</title>
+
+	 <!-- Import jQuery -->
+	 <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	 <!-- Import Google Icon Font -->
+	 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	 <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+	 <link href="account_page.css" rel="stylesheet">
+	 <script src="account_page.js"></script>
+	 <!--<script src="/holz/javascripts/signout.js"></script>-->
+
+	 <!-- Let browser know website is optimized for mobile -->
+	 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+<body>
+	<!-- Dropdown Structure -->
+   <ul id='dropdown1' class='dropdown-content'>
+		<li><a href="account_page.html">Account</a></li>
+		<li class="divider"></li>
+		<li><a href="summary.html">Summary</a></li>
+		<li class="divider"></li>
+		<li><a href="activity.html">Activities</a></li>
+		<li class="divider"></li>
+
+		<li><a href="#!" id="signout">Sign out</a></li>
+	</ul>
+	<nav>
+		<div class="nav-wrapper blue-grey darken-2">
+			<a href="account_page.html" class="brand-logo left"><span id="name">Account</span></a>
+			<ul class="right ">
+				<!-- Dropdown Trigger -->
+	         <li><a class='dropdown-trigger btn' href='#' data-target='dropdown1'><i class="material-icons">more_vert</i></a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="row" id="main">
+		<div class="col s12 m12">
+			<ul class="collection with-header">
+				<li class="collection-header">
+					<h5>Account Details</h5>
+				</li>
+				<li class="collection-item">Email: <span id="email"></span></li>
+				<li class="collection-item">Name: <span id="fullName"></span></li>
+				<li id = "update" class="collection-item"><a href="#!" id="updateAccount">Update Account Information</a></li>
+				<li class="collection-item" id="updateAccountForm">
+					<label style="color:rgb(158,158,158)"; for="newEmail">New Account Email:</label>
+					<input type="text" id="newEmail" name="newEmail" col="30">
+					<label style="color:rgb(158,158,158)"; for="newName">New Account Name:</label>
+					<input type="text" id="newName" name="newName" col="30">
+					<label style="color:rgb(158,158,158)"; for="newPassword">New Account Password:</label>
+					<input type="password" id="newPassword" class = "password_input" name="newPassword" col="30">
+					<label style="color:rgb(158,158,158)"; for="newPasswordConfirm">Confirm New Password:</label>
+					<input type="password" id="newPasswordConfirm" class = "password_input" name="newPasswordConfirm" col="30">
+
+					<div id = "passwordErrors">
+						<ul id = "passwordRequirements">
+							<li class = "pr" id = "length">Between 8 and 20 characters</li>
+							<li class = "pr" id = "upperCase">Contains at least 1 uppercase letter</li>
+							<li class = "pr" id = "lowerCase">Contains at least 1 lowercase letter</li>
+							<li class = "pr" id = "number">Contains at least 1 number</li>
+							<li class = "pr" id = "specialCharacter">Contains at least 1 special character</li>
+							<li class = "match" id = "match">Passwords Match</li>
+						</ul>
+					</div>
+
+					<button id="updateAccountButton" class="waves-effect waves-light btn">Update</button> 
+					<button id="cancelUpdateAccountButton" class="waves-effect waves-light btn">Cancel</button>
+				</li>
+				<li id = "errors" class="collection-item">
+					<div class='red-text text-darken-2' id="updateErrorDiv">
+						<ul id = "updateErrorsList">
+						</ul>
+					</div>
+				</li>
+			</ul>
+
+
+
+			<ul class="collection with-header" id="devices">
+				<li class="collection-header">
+					<h5>Devices</h5>
+				</li>
+				<li class="collection-item" id="registerDeviceForm">
+					<label for="registerDeviceId">New Device ID:</label>
+					<input type="text" id="registerDeviceId" name="registerDeviceId" col="30">
+					<button id="registerDeviceButton" class="waves-effect waves-light btn">Register</button> 
+					<button id="cancelRegisterButton" class="waves-effect waves-light btn">Cancel</button> 
+				</li>
+
+
+				<li class="collection-item" id="deleteDeviceForm">
+					<label for="deleteDeviceId">Delete device with Id:</label>
+					<input type="text" id="deleteDeviceId" name="deleteDeviceId" col="30">
+					<button id="deleteDeviceButton" class="waves-effect waves-light btn">Delete</button> 
+					<button id="cancelDeleteButton" class="waves-effect waves-light btn">Cancel</button> 
+				</li>
+
+
+				<li class="collection-item" id="replaceDeviceForm">
+					<label for="replaceDeviceIdOld">Old Device ID:</label>
+					<input type="text" id="replaceDeviceIdOld" name="replaceDeviceIdOld" col="30">
+					<label style="color:rgb(158,158,158)";for="replaceDeviceIdNew">Replacement Device ID:</label>
+					<input type="text" id="replaceDeviceIdNew" name="replaceDeviceIdNew" col="30">
+					<button id="replaceDeviceButton" class="waves-effect waves-light btn">Replace</button> 
+					<button id="cancelReplaceButton" class="waves-effect waves-light btn">Cancel</button> 
+				</li>
+
+
+				<li id = "deviceErrors" class="collection-item">
+					<div class='red-text text-darken-2' id="updateErrorDiv">
+						<ul id = "updateDeviceErrorsList">
+						</ul>
+					</div>
+				</li>
+
+
+				<li class="collection-item" id="deviceControl">
+					<a style="padding-right:10px"; href="#!" id="registerDevice">Register</a>
+					<a style="padding-right:10px"; href="#!" id="deleteDevice">Delete</a>
+					<a style="padding-right:10px"; href = "#!" id = "replaceDevice">Replace</a>
+				</li>
+
+			</ul>
+
+			<ul class="collection with-header" id="UV">
+				<li class="collection-header">
+					<h5>UV Exposure</h5>
+				</li>
+				<li class="collection-item">Ultra Violet Threshold: <span id="uv"></span></li>
+
+
+				<li id = "updateUV" class="collection-item">
+					<a href="#!" id="updateUltraViolet">Update UV Threshold</a>
+				</li>
+
+
+
+				<li class="collection-item" id="uvForm">
+					<label for="uvThreshold">New Ultra Violet Threshold:</label>
+					<input type="text" id="uvThreshold" name="uvThreshold" col="30">
+					<button id="updateUVButton" class="waves-effect waves-light btn">Update</button> 
+					<button id="cancelUVButton" class="waves-effect waves-light btn">Cancel</button> 
+				</li>
+			
+					<li id = "uvErrors" class="collection-item">
+					<div class='red-text text-darken-2' id="updateErrorDiv">
+						<ul id = "updateUVErrorsList">
+						</ul>
+					</div>
+				</li>
+			</ul>
+
+			<div class='red-text text-darken-2' id="errorDiv">
+				<ul id = "errorsList">
+				</ul>
+			</div>
+		</div>
+	</div>
+  </body>
+
+  <!-- Initialize dropdown menu in materialize -->
+  <script>
+    $('.dropdown-trigger').dropdown();
+  </script>
+
+</html>

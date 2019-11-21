@@ -8,6 +8,9 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var participationRouter = require('./routes/participation');
 var currencyRouter = require('./routes/currency');
+var labRouter = require('./routes/lab');
+var loginRouter = require('./routes/login');
+var deviceRouter = require('./routes/devices');
 
 var app = express();
 
@@ -41,6 +44,9 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/participation', participationRouter);
 app.use('/currency', currencyRouter);
+app.use('/lab', labRouter);
+app.use('/login', loginRouter); 
+app.use('/devices', deviceRouter); 
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    		<meta charset="UTF-8">
+    		<title>SunRunr</title>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" media="screen,projection">
+    		<link href = "login_page.css" rel = "stylesheet">
+    		<script src="login_page.js"></script>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />		
+
+	</head>
+
+	 
+	<body>
+	     
+		<div class="login-page">
+  			<div class="form">
+    				<div id = "form" class="register-form">
+     					<input class = "input" id = "email" type="text" placeholder = "Email"/>
+					<input class = "input" id= "name"  type="text" placeholder = "Name"/>
+      					<input class = "password_input" id = "password" type="password" placeholder = "Password"/>
+      					<input class = "password_input" id = "passwordConfirm" type="password" placeholder = "Confirm Password"/>
+					<div id = "passwordErrors">
+						<ul id = "passwordRequirements">
+							<li class = "pr" id = "length">Between 8 and 20 characters</li>
+							<li class = "pr" id = "upperCase">Contains at least 1 uppercase letter</li>
+							<li class = "pr" id = "lowerCase">Contains at least 1 lowercase letter</li>
+							<li class = "pr" id = "number">Contains at least 1 number</li>
+							<li class = "pr" id = "specialCharacter">Contains at least 1 special character</li>
+							<li class = "match" id = "match">Passwords Match</li>
+						</ul> 
+					</div>
+
+					<button id = "submit" >create</button>
+      					<div id = "formErrors">
+         					<ul id = "errorList">
+          					</ul>
+      					</div>
+      					<p class="message">Already registered? <a id="signIn" href="#">Sign In</a></p>
+    				</div>
+    
+				<div id = "form" class="login-form">
+      					<input class = "input" id = "login_email" type="text" placeholder="Account Email"/>
+      					<input class = "input" id = "login_password" type="password" placeholder ="Password"/>
+      					<button id = "login">login</button>
+					<div id = "loginErrors">
+						<ul id = "loginList">
+						<ul>
+					</div>
+
+      					<p class="message">Not registered? <a id = "notRegistered" href="#">Create an account</a></p>
+					    	      
+
+    				</div>
+  			</div>
+		</div>
+	</body>
+</html>
